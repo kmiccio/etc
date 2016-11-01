@@ -1,0 +1,21 @@
+1.- sudo npm install -g cordova
+2.- Instalar: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html ( JDK -> NO EL -> JRE )
+3.- Instalar: https://developer.android.com/studio/index.html 
+4.- Instalar: https://itunes.apple.com/au/app/xcode/id497799835?mt=12
+5.- xcode-select --install
+6.- ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+7.- brew update
+8.- brew install ant
+9.- cd
+    nano .bashrc
+    Pegar:
+    export PATH=/Users/“YOUR USER”/Library/Android/sdk/platform-tools:/Users/“YOUR USER”/Library/Android/sdk/tools:$PATH
+
+10.- cd
+     nano .bash_profile
+     Pegar:
+    if [ -f ~/.bashrc ]; then
+         source ~/.bashrc
+    fi
+    
+11.-
