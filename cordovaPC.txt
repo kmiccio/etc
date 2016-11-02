@@ -1,0 +1,29 @@
+Instalar
+Referencia:
+
+1.- Instalar node.js		: https://nodejs.org/es/
+2.- Instalar git    		: http://git-scm.com
+3.- Instalar Java   		: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+4.- Instalar ant    		: http://ant.apache.org/bindownload.cgi
+5.- Instalar Android Studio 	: https://developer.android.com/studio/index.html
+6.- Editar: 
+ir a Equipo/propiedades/Configracion avanzada/ Variables de Entorno ( abajo )
+
+En: PATH
+variable agregar ;C:\Archivos de programa\Java\jdk1.8.0_111\bin;C:\ANT\bin;C:\Users\Ignacio Castro\AppData\Local\Android\Sdk\tools;C:\Users\Ignacio Castro\AppData\Local\Android\Sdk\platform-tools
+referencia: a) carpeta del JDK b) Caperte de Apache ANT c) Carpeta de Android SDK d) Carpeta del Android SDK
+
+Agregar: JAVA_HOME
+Variable Agregar: C:\Archivos de programa\Java\jdk1.8.0_11
+referencia: a) carpeta dell JDK
+
+Agregar : ANT HOME
+Variable Agregar: C:\ANT
+referencia: a) carpeta del Apacha ANT
+
+Verificar:
+cordova -version
+javac -version
+ant -version
+adb version
+android ( SELECCIONAR API 19 Y ACEPTAR LICENCIA )
