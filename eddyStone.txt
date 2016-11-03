@@ -13,3 +13,28 @@ ANDROID 6.0 (API 23)
 
 
 cordova-plugin-eddystone ( Solo, sin BLE )
+
+Eddystone-UID 
+	-> Namespace -> EDD1EBEAC04E5DEFA017 (10 bytes)
+	-> Instance -> 0BDB87539B67 ( 6 Bytes )
+		-> {Uint8Array} beacon.nid =  namespace ID.
+		-> {Uint8Array} beacon.bid = beacon ID.
+Eddystone-URL -> URL
+	-> {string} beacon.url = URL
+
+Base
+Eddystone-TLM -> Telemetria del Beacon
+	-> @property {number} beacon.rssi - Received signal strength indicator (RSSI)
+	-> {number} beacon.voltage = battery voltage, 0 if device is not battery-powered.
+	-> {number} beacon.temperature = Device's ambient temperature
+	-> @property {string} beacon.address - Uniquely identifies the device. On Android MAC address, iOS it is a temporary UUID.
+	-> @property {string} beacon.name - device name, or null.
+	-> {number} beacon.adv_cnt = Count of advertisement frames sent since device's startup.
+	-> {number} beacon.dsec_cnt - Time since device's startup, in deci-seconds (10 units equals 1 second).
+
+Eddystone-EID -> encryted ( V2 )
+	-> NO USED
+
+
+
+
