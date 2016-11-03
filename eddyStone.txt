@@ -1,0 +1,15 @@
+importantes:
+
+<?xml version='1.0' encoding='utf‐8'?> <widget id=" 
+<name> 
+<platform name="android"> <preference name="android‐targetSdkVersion" value="23”/> 
+
+android SDK 25.2.2
+android SDK Tools 25
+Android SDK Platform-tools 25
+Android SDK Build-tools 25-23
+SDK Platform 24
+ANDROID 6.0 (API 23)
+
+
+cordova-plugin-eddystone ( Solo, sin BLE )
