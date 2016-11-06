@@ -1,5 +1,7 @@
+0.- Instalar http://nodejs.org
 1.- sudo npm install -g cordova
 2.- Instalar: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html ( JDK -> NO EL -> JRE )
+        Los SDK quedan en: /Users/<username>/Library/Android/sdk
 3.- Instalar: https://developer.android.com/studio/index.html 
 4.- Instalar: https://itunes.apple.com/au/app/xcode/id497799835?mt=12
 5.- xcode-select --install
@@ -18,4 +20,24 @@
          source ~/.bashrc
     fi
     
-11.-
+11.- android
+
+<?xml version='1.0' encoding='utf‐8'?>...
+<name> ..
+<platform name="android">
+...
+<preference name="android‐targetSdkVersion" value="23”/> 
+...
+
+android SDK 25.2.2
+android SDK Tools 25
+Android SDK Platform-tools 25
+Android SDK Build-tools 25-23
+SDK Platform 24
+ANDROID 6.0 (API 23) FULL
+
+
+cordova-plugin-eddystone ( Solo, sin BLE )
+
+
+
