@@ -1,0 +1,31 @@
+PI INSTALL
+
+Active mod_rewrite
+	- sudo a2enmod rewrite
+	- sudo nano /etc/apache2/sites-enabled/000-default.conf
+		- verificar: AllowOverride All
+		- Verificar en subdomain.conf tambien
+	- Crear .htaccess en la carpeta o carpeta de subdominio
+		- sudo /var/www/html/.htaccess
+		
+Options Indexes FollowSymLinks MultiViews
+RewriteEngine On
+RewriteRule ^([^/]+)/([^/]+) index.php?variable1=$1&variable=$2 [L,QSA]
+
+		- sudo chmod 644 /var/www/html/.htaccess // OPTIONAL
+		- sudo service apache2 restart
+
+=============
+TEST .htacess
+=============
+Busca primero index2.php antes que index.php
+	-sudo nano index.php -> echo “index”;
+	-sudo nano index2.php -> echo “index2”;
+	-sudo nano .htaccess
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+DirectoryIndex index2.php index.php      
+order deny,allow
+	-test
+
