@@ -3,7 +3,7 @@ Referencia:
 
 1.- Instalar node.js		: https://nodejs.org/es/
 2.- Instalar git    		: http://git-scm.com
-3.- Instalar Java   		: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+3.- Instalar Java   		: http://www.oracle.com/technetwork/java/javase/downloads/index.html / JDK ** NO ** JRE
 4.- Instalar ant    		: http://ant.apache.org/bindownload.cgi
 5.- Instalar Android Studio 	: https://developer.android.com/studio/index.html
 6.- Editar: 
