@@ -1,0 +1,162 @@
+VPS EN DIGITAL OCEAN -> DROPLET UBUNTU 14.04 LAMP
+
+Entrar:
+	- ssh root@IP
+	- cambiar password // automatico )
+
+Password MySQL:
+	- nano /root/.digitalocean_password // Obtiene password de Mysql
+
+Actualizar:
+	- sudo apt-get update
+
+Instalar phpmyadmin:
+	- sudo apt-get install phpmyadmin
+	- Password administrador esta en: /root/.digitalocean_password  
+	- Password user phpmyadmin -> random pass next 
+
+	al finalizar la instalación de phpmyadmin
+	- sudo php5enmod mcrypt
+	- sudo service apache2 restart
+		*en caso de no seleccionar Apache2 ( no requerido -> hacerlo igual )
+		- sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
+	- phpmyadmin queda en: http://domain_name_or_IP/phpmyadmin
+
+=========== 
+DNS forward Register.com 
+	DNS del dominio.com
+		- ns1.digitalocean.com
+		- ns2.digitalocean.com
+		- ns3.digitalocean.com
+
+DNS en Digital Ocean
+	Networking 
+	dominio.com -> Droplet -> crear
+	
+	Ingresar al dominio
+		- a record: @ -> IP ( del droplet ) -> crear
+		- CNAME: wwww -> @ -> crear
+
+	Crear subdominio
+		- a: subdomain -> IP ( del droplet ) -> crear
+
+
+Apuntar Subdominio -> a carpeta dentro de apache2 -> var/www/html/subdominio
+
+	Virtual host
+		- cd /etc/apache2/sites-available
+		- sudo nano subdomain.conf
+		- Pagar y editar domain/domainfolder/subdomain/
+    
+		<VirtualHost *:80>
+
+    			ServerAdmin user@subdomain.domain.com
+    			ServerName subdomain.domain.com
+
+    			DocumentRoot /var/www/html/subdomainfolder/
+
+       			<Directory /var/www/html/subdomainfolder/>
+            			Require all granted
+        		</Directory>
+
+    			ErrorLog ${APACHE_LOG_DIR}/error.log
+    			CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+		</VirtualHost>
+    
+		- sudo a2ensite subdomain.conf
+		- sudo service apache2 restart
+
+
+SSL ( LetsEncrypt )
+	- sudo mkdir cert
+	- cd cert
+	- sudo wget https://dl.eff.org/certbot-auto
+	- sudo chmod a+x certbot-auto
+	- ./certbot-auto   -> Permite después re-instalar a subdominios con Expand
+
+SSL con renovación automatica
+	- ./certbot-auto renew --dry-run  // test
+	VPS EN DIGITAL OCEAN -> DROPLET UBUNTU 14.04 LAMP
+
+Entrar:
+	- ssh root@IP
+	- cambiar password // automatico )
+
+Password MySQL:
+	- nano /root/.digitalocean_password // Obtiene password de Mysql
+
+Actualizar:
+	- sudo apt-get update
+
+Instalar phpmyadmin:
+	- sudo apt-get install phpmyadmin
+	- Password administrador esta en: /root/.digitalocean_password  
+	- Password user phpmyadmin -> random pass next 
+
+	al finalizar la instalación de phpmyadmin
+	- sudo php5enmod mcrypt
+	- sudo service apache2 restart
+		*en caso de no seleccionar Apache2 ( no requerido )
+		- sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
+	- phpmyadmin queda en: http://domain_name_or_IP/phpmyadmin
+
+=========== 
+DNS forward Register.com 
+	DNS del dominio.com
+		- ns1.digitalocean.com
+		- ns2.digitalocean.com
+		- ns3.digitalocean.com
+
+DNS en Digital Ocean
+	Networking 
+	dominio.com -> Droplet -> crear
+	
+	Ingresar al dominio
+		- a record: @ -> IP ( del droplet ) -> crear
+		- CNAME: wwww -> @ -> crear
+
+	Crear subdominio
+		- a: subdomain -> IP ( del droplet ) -> crear
+
+
+Apuntar Subdominio -> a carpeta dentro de apache2 -> var/www/html/subdominio
+
+	Virtual host
+		- cd /etc/apache2/sites-available
+		- sudo nano subdomain.conf
+		- Pagar y editar domain/domainfolder/subdomain/
+		<VirtualHost *:80>
+
+    			ServerAdmin user@subdomain.domain.com
+    			ServerName subdomain.domain.com
+
+    			DocumentRoot /var/www/html/subdomainfolder/
+
+       			<Directory /var/www/html/subdomainfolder/>
+            			Require all granted
+        		</Directory>
+
+    			ErrorLog ${APACHE_LOG_DIR}/error.log
+    			CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+		</VirtualHost>
+		- sudo a2ensite subdomain.conf
+		- sudo service apache2 restart
+
+
+SSL ( LetsEncrypt )
+	- sudo mkdir cert
+	- cd cert
+	- sudo wget https://dl.eff.org/certbot-auto
+	- sudo chmod a+x certbot-auto
+	- ./certbot-auto   -> Permite después re-instalar a subdominios 
+
+SSL con renovación automatica
+	- ./certbot-auto renew --dry-run 
+	- tty -> obtener /dev/pts/0 -> esto es para poder imprimir en el terminal el crontab
+  - sudo crontab -e // elegir 2
+	- 0 * * * * ./cert/certbot-auto renew --quiet --no-self-upgrade          => Este es sin imprimir en el terminal
+	- 0 * * * * ./certbot-auto renew --no-self-upgrade >/dev/pts/0 2>&1      => // EL DE AHORA imprime en el terminal
+
+
