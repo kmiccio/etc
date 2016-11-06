@@ -26,4 +26,4 @@ cordova -version
 javac -version
 ant -version
 adb version
-android ( SELECCIONAR API 19 Y ACEPTAR LICENCIA )
+android ( SELECCIONAR API REQUERIDA Y ACEPTAR LICENCIA ) -> OJO SIEMPRE HAY QUE ELEGIR API..ver Mac OSX Install
