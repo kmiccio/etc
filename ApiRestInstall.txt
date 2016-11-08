@@ -28,4 +28,14 @@ deny from all
 DirectoryIndex index2.php index.php      
 order deny,allow
 	-test
+	
+	
+============
+Force to HTTPS
+============
+Options Indexes FollowSymLinks MultiViews
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^([^/]+)/([^/]+)/([^/]+) https://subdomain.domain.com/index.php?type=$1&namespace=$2&instance=$3 [L,QSA]
+==================
 
