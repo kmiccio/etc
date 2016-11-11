@@ -56,6 +56,7 @@ Apuntar Subdominio -> a carpeta dentro de apache2 -> var/www/html/subdominio
     			DocumentRoot /var/www/html/subdomainfolder/
 
        			<Directory /var/www/html/subdomainfolder/>
+				AllowOverride All
             			Require all granted
         		</Directory>
 
