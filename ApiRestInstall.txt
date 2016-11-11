@@ -37,5 +37,16 @@ Options Indexes FollowSymLinks MultiViews
 RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^([^/]+)/([^/]+)/([^/]+) https://subdomain.domain.com/index.php?type=$1&namespace=$2&instance=$3 [L,QSA]
+
 ==================
+multiple opciones
+==================
+Options Indexes FollowSymLinks MultiViews
+RewriteEngine On
+RewriteRule ^urlapp/............
+RewriteRule ^([^/]+)/([^/]+) index.php?variable1=$1&variable=$2 [L,QSA]
+
+
+
+
 
