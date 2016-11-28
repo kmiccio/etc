@@ -1,0 +1,7 @@
+Clone
+sudo poweroff
+images / Take snapshot
+
+restart
+Droplets
+More / Porwer ON
