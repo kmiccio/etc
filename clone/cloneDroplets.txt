@@ -4,4 +4,4 @@ images / Take snapshot
 
 restart
 Droplets
-More / Porwer ON
+Droplet / Switch ON
