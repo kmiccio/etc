@@ -17,6 +17,7 @@
 -sudo service postfix restart
 -test txt: echo "This is the body of the email" | mail -s "This is the subject line" your_email_address
 -test html: echo "<b>HTML Message goes here</b>" | mail -s "$(echo -e "This is the subject\nContent-Type: text/html")" your_email_address
+-test Name: echo "<b>HTML Message goes here</b>" | mail -a "From: NAME <no-reply@example.com>" -s "$(echo -e 'This is the subject\nContent-Type: text/html')" your_email_address
 
 
 Reference: 
