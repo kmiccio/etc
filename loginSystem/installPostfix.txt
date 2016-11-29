@@ -6,6 +6,12 @@
       -> myhostname = example.com
       -> mydestination = example.com, localhost.example.com, example.com
       -> inet_interfaces = loopback-only
+      -> add: smtp_generic_maps = hash:/etc/postfix/generic
+-sudo nano /etc/postfix/generic
+      -> root@example.com   no-reply@example.com
+      -> root root@example   no-reply@example.com
+      -> @example.com       no-reply@example.com
+-sudo postmap /etc/postfix/generic
 -sudo service postfix restart
 
 sudo apt install mailutils
