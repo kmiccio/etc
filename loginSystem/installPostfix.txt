@@ -1,4 +1,4 @@
--Nota Instalar despues de direcciona DNS
+-Nota Instalar despues de direccionar DNS
 -sudo apt-get install postfix
 -Seleccionar: Internet Site
 -dominio: example.com
