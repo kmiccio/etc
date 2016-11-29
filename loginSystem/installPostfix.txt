@@ -9,11 +9,18 @@
       -> add: smtp_generic_maps = hash:/etc/postfix/generic
 -sudo nano /etc/postfix/generic
       -> root@example.com   no-reply@example.com
-      -> root root@example   no-reply@example.com
       -> @example.com       no-reply@example.com
+      -> The_original_test_sender no-reply@example.com
 -sudo postmap /etc/postfix/generic
 -sudo service postfix restart
+-sudo apt install mailutils
+-sudo service postfix restart
+-test txt: echo "This is the body of the email" | mail -s "This is the subject line" your_email_address
+-test html: echo "<b>HTML Message goes here</b>" | mail -s "$(echo -e "This is the subject\nContent-Type: text/html")" your_email_address
 
-sudo apt install mailutils
 
-smtp_generic_maps = hash:/etc/postfix/generic
+Reference: 
+-http://superuser.com/questions/695170/changing-default-from-e-mail-address-for-system-accounts-when-using-sendmail
+-https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04
+-echo "This is the body of the email" | mail -s "This is the subject line" your_email_address
+
