@@ -1,4 +1,4 @@
-PI INSTALL
+API INSTALL
 
 Active mod_rewrite
 	- sudo a2enmod rewrite
@@ -50,6 +50,9 @@ Options Indexes FollowSymLinks MultiViews
 RewriteEngine On
 RewriteRule ^urlapp/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+) index.php?type=urlapp&namespace=$1&instance=$2&rssi=$3&distance=$4&txPower=$5&voltage=$6&temp=$7 [L,QSA]
 RewriteRule ^([^/]+)/([^/]+) index.php?type=$1&namespace=$2 [L,QSA]
+
+CRONTAB CADA 24 HORAS, MEDIANOCHE
+0 0 * * * /usr/bin/php /var/www/html/api/cachedelete.php >/dev/pts/0 2>&1
 
 
 
