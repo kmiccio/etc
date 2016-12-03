@@ -24,5 +24,6 @@ Reference:
 -http://superuser.com/questions/695170/changing-default-from-e-mail-address-for-system-accounts-when-using-sendmail
 -https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04
 -https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-postfix-as-a-send-only-smtp-server-on-ubuntu-16-04
+-https://www.digitalocean.com/community/questions/email-goes-to-spam-gmail-php
 
 
