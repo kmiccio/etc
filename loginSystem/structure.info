@@ -8,8 +8,15 @@
 
   
 -navbarlogin.php ( include )
-  -login.php
-  -signup.php
-  -forgot.php
+  -Paginas que requieren navbarlogin:
+      -login.php
+      -signup.php
+      -forgot.php
   
 systemLogin.php
+
+Paginas que utilizan conexion a base de datos
+  -password.php
+  -confirm.php
+  -systemLogin.php
+  -index.php
