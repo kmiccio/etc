@@ -1,0 +1,13 @@
+-login.php
+-forgot.php
+  -> password.php
+-signup.php
+  -> confirm.php
+
+  
+-navbarlogin.php ( include )
+  -login.php
+  -signup.php
+  -forgot.php
+  
+systemLogin.php
