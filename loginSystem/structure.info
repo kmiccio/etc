@@ -3,6 +3,7 @@
   -> password.php
 -signup.php
   -> confirm.php
+-logout.php
 
   
 -navbarlogin.php ( include )
